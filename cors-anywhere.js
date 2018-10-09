@@ -1,5 +1,8 @@
+
+require('dotenv').load();
+
 // Listen on a specific host via the HOST environment variable
-var host = process.env.HOST || '0.0.0.0';
+var host = process.env.HOST || 'cors-anywhere.mellon.cloud';
 // Listen on a specific port via the PORT environment variable
 var port = process.env.PORT || 8080;
 
@@ -8,7 +11,7 @@ var port = process.env.PORT || 8080;
 // immediate abuse (e.g. denial of service). If you want to block all origins except for some,
 // use originWhitelist instead.
 var originBlacklist = parseEnvList(process.env.CORSANYWHERE_BLACKLIST);
-var originWhitelist = parseEnvList(process.env.CORSANYWHERE_WHITELIST);
+var originWhitelist = parseEnvList('https://umbrella.mellon.cloud');
 function parseEnvList(env) {
   if (!env) {
     return [];
